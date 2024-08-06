@@ -3,6 +3,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 
 import { useEffect, useState, useRef } from 'react'
+import { Button } from '@mui/material'
+import CloudUploadIcon from '@mui/icons-material/CloudUpload'
+import { styled } from '@mui/material/styles'
+import LoadingButton from '@mui/lab/LoadingButton'
 
 import { gameService } from '../../services/game.service.js'
 import { saveGame } from '../../store/actions/game.actions.js'
@@ -15,6 +19,17 @@ import { uploadService } from '../../services/upload.service.js'
 import { MyForm } from './MyForm.jsx'
 
 // import '../css/GameEdit.css'
+const VisuallyHiddenInput = styled('input')({
+  clip: 'rect(0 0 0 0)',
+  clipPath: 'inset(50%)',
+  height: 1,
+  overflow: 'hidden',
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  whiteSpace: 'nowrap',
+  width: 1,
+})
 
 export function GameEdit() {
   const labels = [
@@ -172,10 +187,20 @@ export function GameEdit() {
           />
         </div>{' '}
         <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <h4>Cover:</h4>
+          <Button
+            component='label'
+            role={undefined}
+            variant='contained'
+            tabIndex={-1}
+            startIcon={<CloudUploadIcon />}
+          >
+            Upload file
+            <VisuallyHiddenInput type='file' onChange={uploadFile} />
+          </Button>
+
           <label htmlFor=''>Cover link:</label>
           <input onChange={renderCover} type='text' style={{ width: 350 }} />
-          <label htmlFor='file'>Cover file:</label>
-          <input onChange={uploadFile} id='file' type='file' />
         </div>
         <div>
           <label htmlFor=''>Game Price:</label>
@@ -245,7 +270,9 @@ export function GameEdit() {
             })}
           </div>
         </div>
-        <input type='submit' value='Submit'></input>
+        <LoadingButton variant='outlined' type='submit'>
+          Submit
+        </LoadingButton>
       </form>
     </section>
   )
