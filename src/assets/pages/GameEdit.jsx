@@ -10,6 +10,7 @@ import { loadGames } from '../../store/actions/game.actions.js'
 
 import { showSuccessMsg } from '../../services/event-bus.service.js'
 import { showErrorMsg } from '../../services/event-bus.service.js'
+import { uploadService } from '../../services/upload.service.js'
 
 import { MyForm } from './MyForm.jsx'
 
@@ -148,6 +149,13 @@ export function GameEdit() {
     setCover(coverSrc)
   }
 
+  async function uploadFile(ev) {
+    const res = await uploadService.uploadImg(ev)
+    console.log(res.url)
+    const coverSrc = res.url
+    setCover(coverSrc)
+  }
+
   return (
     <section className='section-container'>
       {/* {game && <h2>Edit{` - ${game.name}`}</h2>} */}
@@ -162,6 +170,12 @@ export function GameEdit() {
             value={editGame.name}
             style={{ width: 200 }}
           />
+        </div>{' '}
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <label htmlFor=''>Cover link:</label>
+          <input onChange={renderCover} type='text' style={{ width: 350 }} />
+          <label htmlFor='file'>Cover file:</label>
+          <input onChange={uploadFile} id='file' type='file' />
         </div>
         <div>
           <label htmlFor=''>Game Price:</label>
@@ -230,10 +244,6 @@ export function GameEdit() {
               )
             })}
           </div>
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <label htmlFor=''>Cover link:</label>
-          <input onChange={renderCover} type='text' style={{ width: 350 }} />
         </div>
         <input type='submit' value='Submit'></input>
       </form>
