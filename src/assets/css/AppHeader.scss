@@ -166,26 +166,32 @@ box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
         .cart-quantity{
             position: relative;
             /* content: ''; */
-            /* bottom: 35px; */
-            /* left: 15px; */
-            right: 15px;
+            // bottom: 35px;
+            // left: 15px; 
+            right: 25px;
+            top: 2px;
             justify-self: start;
             z-index: 2;
             font-weight: bold;
+
+            height: 30px;
+            width: 30px;
+            background-color: var(--red);
+            border-radius: 25px;
+            vertical-align: middle;
+            line-height: 1.8em;
+
+            // padding: 2px;
         
-            &::before{
-                position: absolute;
-                content: '';
-                top: -2px;
-                left: -6px;
-                height: 30px;
-                width: 30px;
-                background-color: var(--red);
+            // &::before{
+            // position: absolute;
+            // content: '';
+            //     top: -3px;
+            //     left: -9px;
 
-                z-index: -1;
-                border-radius: 25px;
+            //     z-index: -1;
 
-            }
+            // }
 
 
         }

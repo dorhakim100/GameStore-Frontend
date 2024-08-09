@@ -15,9 +15,13 @@ import { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { getAllGames } from '../../store/actions/game.actions.js'
 
+import { setFilterBy } from '../../store/actions/game.actions.js'
+import { gameService } from '../../services/game.service.js'
+
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 export function Chart({ companies }) {
+  setFilterBy(gameService.getDefaultFilter())
   const games = useSelector((storeState) => storeState.gameModule.games)
 
   let inStockSony = 0
@@ -69,16 +73,21 @@ export function Chart({ companies }) {
   }
   const data = {
     labels: labels.map((label) => `${label.company}`),
+
     datasets: [
       {
         label: 'In Stock',
         data: labels.map((company) => company.inStock),
         backgroundColor: 'rgba(17, 152, 15, 0.5)',
+        borderWidth: 3,
+        borderColor: 'rgb(17, 152, 15)',
       },
       {
         label: 'Out of Stock',
         data: labels.map((company) => company.notInStock),
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
+        borderWidth: 3,
+        borderColor: 'rgb(255, 99, 132)',
       },
     ],
   }

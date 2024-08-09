@@ -19,7 +19,7 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
           className='nav-button'
           variant='contained'
           onClick={() => {
-            // event.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
             navigate('/')
             toggleNavBar()
           }}
@@ -30,7 +30,7 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
           className='nav-button'
           variant='contained'
           onClick={() => {
-            // event.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
             navigate('/game')
             toggleNavBar()
           }}
@@ -41,7 +41,7 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
           className='nav-button'
           variant='contained'
           onClick={() => {
-            // event.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
             navigate('/dashboard')
             toggleNavBar()
           }}
@@ -52,7 +52,7 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
           className='nav-button'
           variant='contained'
           onClick={() => {
-            // event.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
             navigate('/about')
             toggleNavBar()
           }}
@@ -63,7 +63,7 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
           className='nav-button'
           variant='contained'
           onClick={() => {
-            // event.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
             navigate('/review')
             toggleNavBar()
           }}
@@ -75,7 +75,7 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
             className='nav-button'
             variant='contained'
             onClick={() => {
-              // event.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
               navigate(`user/${user._id}`)
               toggleNavBar()
             }}

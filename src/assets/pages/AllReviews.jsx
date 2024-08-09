@@ -52,11 +52,17 @@ export function AllReviews() {
       {games.map((game) => {
         return (
           <div className='review-game-container' key={game}>
-            <Link to={`/game/${game._id}`}>
+            <Link
+              to={`/game/${game.gameId}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <h3>{game.gameName}</h3>
             </Link>
 
-            <Link to={`/game/${game._id}`}>
+            <Link
+              to={`/game/${game.gameId}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img src={game.gameCover} alt='' />
             </Link>
             <ReviewsSlider reviews={game.reviewContent} />

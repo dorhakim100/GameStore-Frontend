@@ -182,7 +182,7 @@
 
 .games-container{
     max-width: 1280px;
-    height: 655px;
+    height: 700px;
     margin: 0 auto;
     max-width: 80vw;
     @media (max-width:500px) {
@@ -197,7 +197,7 @@
 
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(2,300px);
+    grid-template-rows: repeat(2,350px);
 
     // background-color: rgb(240, 240, 240);
 
@@ -220,6 +220,14 @@
         grid-template-columns: 1fr;
         height: 100%;
 
+    }
+
+    .game-card-container{
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 1em;
     }
 
     .game-container{

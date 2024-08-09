@@ -110,7 +110,11 @@
 
 
     .game-card-container{
-
+       &:hover{
+                img{
+                    scale: (1.1);
+                }
+            }
         // width: 100%;
         .title-container{
             display: grid;
@@ -122,7 +126,7 @@
             border:3px,solid, var(--text);
 
   @media (max-width:500px) {
-                // max-width: 50vw;
+
                 img{
                     width: 20vw;
                     margin-top: 5em;
@@ -130,9 +134,6 @@
                 }
             }
             border-radius: 5px;
-
-            // height: calc(10vw);
-            // max-height: 250px;
 
             align-items: center;
             margin: 15px;
@@ -142,30 +143,24 @@
                 overflow-x: auto;
                 padding: 0px;
                 padding-top: 15px;
-                // padding-bottom: 15px;
+
 
                 h4{
-                    // width: 40px;
+
                     width: 80%;
-                    // margin-top: 5em;
-                    // align-self: end;
+
                 }
             }
-            // justify-items: center;
           
         }
 
 
-        // text-align: start;
         h4{
             align-self: center;
         }
-        // font-size: 0.8em;
 
         img{
-            &:hover{
-                scale: (1.1);
-            }
+     
             transition: 0.2s;
             border-radius: 5px;
             width: 12vw;

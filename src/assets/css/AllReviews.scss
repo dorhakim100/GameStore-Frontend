@@ -1,6 +1,8 @@
 
 .review-all-games-container{
     margin-top: 8em;
+
+    width: 90vw;
     
     @media (max-width:800px) {
 
@@ -13,6 +15,9 @@
         // height: 8em;
         padding: 2em;
         background-color: var(--purple);
+
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
 
 
     }
@@ -30,9 +35,12 @@
     background-color: rgb(62, 62, 62);
 
     border-top: 1px solid var(--text);
+    border-left: 1px solid var(--text);
+    border-right: 1px solid var(--text);
     &:nth-of-type(2n){
         
-        background-color: var(--border);
+        background-color: rgb(31, 31, 31);
+        // background-color: rgb(82, 82, 82);
     }
     .review-container{
 

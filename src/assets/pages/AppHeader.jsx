@@ -132,11 +132,36 @@ export function AppHeader() {
           toggleNavBar={toggleNavBar}
         />
         <nav className='app-nav'>
-          <NavLink to='/'>Home</NavLink>
-          <NavLink to='/game'>Games</NavLink>
-          <NavLink to='/dashboard'>Dashboard</NavLink>
-          <NavLink to='/about'>About</NavLink>
-          <NavLink to='/review'>Reviews</NavLink>
+          <NavLink
+            to='/'
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to='/game'
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            Games
+          </NavLink>
+          <NavLink
+            to='/dashboard'
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            to='/about'
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            About
+          </NavLink>
+          <NavLink
+            to='/review'
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            Reviews
+          </NavLink>
         </nav>
         {user ? null : (
           <section>

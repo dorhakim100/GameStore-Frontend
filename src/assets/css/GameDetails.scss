@@ -1,7 +1,20 @@
 .section-container.game-details{
     width: 90vw;
     max-width: 1800px;
+
     margin-top: 8em;
+     .buttons-container{
+                
+                // gap: 1em;
+                align-items: center;
+
+
+                *{
+                    *{
+
+                    }
+                }
+            }
 
     @media (min-width:1200px) {
         // display: grid;
@@ -18,6 +31,11 @@
             // grid-row: 1/-1;
             grid-column: 1/-1;
         }
+    }
+
+    @media (max-width:650px) {
+        margin-top: 5em;
+        
     }
     .game-page{
 
@@ -107,16 +125,6 @@
 
             }
 
-            .buttons-container{
-                display: flex;
-                gap: 1em;
-                align-items: center;
-
-                *{
-                    *{
-
-                    }
-                }
-            }
+           
 
   
