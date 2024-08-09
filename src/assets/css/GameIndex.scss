@@ -1,6 +1,10 @@
 .game-index{
     margin-top: 10em;
     // min-width: 100%;
+    @media (max-width:500px) {
+        width: 80vw;
+        
+    }
 }
 .company-header-container {
     text-align: start;
@@ -55,7 +59,7 @@
     justify-items: center;
     gap: 1em;
     margin-top: 2em;
-    max-width: 1200px;
+    max-width: 90vw;
     *{
         border-radius: 5px;
         border: 1px solid var(--text);
@@ -95,9 +99,12 @@
 }
 
 .game-index-user-interface{
+    max-width: 1280px;
+    margin: 0 auto;
+    max-width: 80vw;
     @media (max-width:500px) {
-        width: 290px;
-        // width: 75vw;
+        // width: 290px;
+
 
         gap: 5px;
         
@@ -111,9 +118,11 @@
     align-items: center;
     gap: 25px;
     background-color: var(--text);
-    border-radius: 10px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 
-    padding: 1em;
+    padding: 25px;
+    // width: 100%;
 
     .user-buttons-container{
         grid-column: 1/-1;
@@ -123,13 +132,20 @@
     .page-container{
         grid-column: 1/-1;
     justify-content: space-between;
+    
+}
+.page-idx{
 
+    @media (max-width:500px) {
+        display: none;
+        
     }
+}
     // position: absolute;
     // top: 100px;
     // left: 0px;
     // right: 0px;
-    margin: 25px;
+    margin-top: 15px;
     @media (max-width:800px) {
         // position: relative;
         
@@ -168,9 +184,11 @@
     max-width: 1280px;
     height: 655px;
     margin: 0 auto;
-    
+    max-width: 80vw;
     @media (max-width:500px) {
-        width: 200px;
+        // width: 200px;
+        // width: 75vw;
+
 
     }
 
@@ -184,7 +202,9 @@
     // background-color: rgb(240, 240, 240);
 
     // background-color: #B0C4DE;
-    border-radius: 5px;
+    // border-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     
     // border: 5px solid var(--blue);
     
@@ -391,5 +411,29 @@ button{
         background-color: var(--blue);
         border-radius: 5px;
         cursor: pointer;
+    }
+}
+
+.add-game-button{
+
+    @media (max-width:520px) {
+        // display: none;
+        position: fixed;
+        bottom: 10em;
+        inset-inline-end: 3em;
+        z-index: 5;
+    }
+}
+
+.filtering-container{
+
+    h3{
+        @media (max-width:520px) {
+            display: none;
+            // position: fixed;
+            // top: 5em;
+            // inset-inline-end: 3em;
+            // z-index: 5;
+        }
     }
 }

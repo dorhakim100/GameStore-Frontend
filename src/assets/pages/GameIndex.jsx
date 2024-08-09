@@ -372,7 +372,7 @@ export function GameIndex() {
           onSetFilter={(event, value) => onSetFilter(ev, value)}
         />{' '}
         {user.isAdmin && (
-          <Link to={`/game/edit`}>
+          <Link to={`/game/edit`} className='add-game-button'>
             <Button variant='contained'>Add Game</Button>
           </Link>
         )}

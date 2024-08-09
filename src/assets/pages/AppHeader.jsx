@@ -50,6 +50,7 @@ export function AppHeader() {
   const [cartLength, setCartLength] = useState(0)
 
   const navBarRef = useRef()
+  const backshadowRef = useRef()
 
   function onSetUser(user) {
     setUser(user)
@@ -94,11 +95,18 @@ export function AppHeader() {
   }
 
   function toggleNavBar() {
-    if (navBarRef.current.style.display === 'flex') {
-      navBarRef.current.style.display = 'none'
+    if (navBarRef.current.style.left === '0em') {
+      navBarRef.current.style.left = '-80em'
+      backshadowRef.current.style.display = 'none'
     } else {
-      navBarRef.current.style.display = 'flex'
+      navBarRef.current.style.left = '0em'
+      backshadowRef.current.style.display = 'block'
     }
+    // if (navBarRef.current.style.display === 'flex') {
+    //   navBarRef.current.style.display = 'none'
+    // } else {
+    //   navBarRef.current.style.display = 'flex'
+    // }
   }
 
   function toggleCart() {
@@ -128,6 +136,7 @@ export function AppHeader() {
           <NavLink to='/game'>Games</NavLink>
           <NavLink to='/dashboard'>Dashboard</NavLink>
           <NavLink to='/about'>About</NavLink>
+          <NavLink to='/review'>Reviews</NavLink>
         </nav>
         {user ? null : (
           <section>
@@ -176,6 +185,7 @@ export function AppHeader() {
         toggleCart={toggleCart}
         toggleNavBar={toggleNavBar}
       />
+      <div className='screen-backshadow' ref={backshadowRef}></div>
     </header>
   )
 }

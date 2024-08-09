@@ -3,9 +3,17 @@ import Slider from 'react-slick'
 import { useEffect, useState } from 'react'
 
 import { Link } from 'react-router-dom'
+import { Stars } from './Stars.jsx'
 
-function MultipleItems({ randomGames }) {
-  console.log(randomGames)
+import { utilService } from '../../services/util.service.js'
+
+export function ReviewsSlider({ reviews }) {
+  console.log(reviews.length)
+
+  if (reviews.length === 1) {
+    const randomReview = utilService.getRandomReviewContent()
+    reviews.push(randomReview)
+  }
 
   //   useEffect(() => {
   //     console.log(randomGames)
@@ -36,25 +44,17 @@ function MultipleItems({ randomGames }) {
   }
   return (
     <div className='slider-container'>
-      <div className='games-card-container'>
+      <div className='reviews-card-container'>
         <Slider {...settings}>
           {/* <div className='games-card-container'> */}
-          {randomGames.map((game) => {
+          {reviews.map((review) => {
             return (
-              <Link
-                to={`/game/${game._id}`}
-                key={game}
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' })
-                }}
-              >
-                <div className='game-card-container'>
-                  <div className='title-container'>
-                    <img src={game.cover} alt='' />
-                    <h3>{game.name}</h3>
-                  </div>
-                </div>
-              </Link>
+              <div className='review-container' key={review.id}>
+                <h4>{review.fullName}</h4>
+                <h5>{review.date}</h5>
+                <Stars rate={review.rating} />
+                <p>{review.txt}</p>
+              </div>
             )
           })}
           {/* </div> */}
@@ -64,4 +64,4 @@ function MultipleItems({ randomGames }) {
   )
 }
 
-export default MultipleItems
+// export default MultipleItems

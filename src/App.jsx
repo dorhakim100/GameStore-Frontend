@@ -18,6 +18,7 @@ import { About } from './assets/pages/About.jsx'
 import { AboutTeam } from './assets/pages/AboutTeam.jsx'
 import { AboutVision } from './assets/pages/AboutVision.jsx'
 import { AppFooter } from './assets/pages/Footer.jsx'
+import { AllReviews } from './assets/pages/AllReviews.jsx'
 
 import { store } from '../src/store/store.js'
 
@@ -44,6 +45,7 @@ export function App() {
                 <Route path='/game' element={<GameIndex />} />
                 <Route path='/dashboard' element={<Dashboard />} />
                 <Route path='/user/:userId' element={<UserDetails />} />
+                <Route path='/review' element={<AllReviews />} />
               </Routes>
             </main>
           </section>

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { userService } from '../../services/user.service.js'
 import { saveGame } from '../../store/actions/game.actions.js'
 import { showSuccessMsg } from '../../services/event-bus.service.js'
+import { Stars } from './Stars.jsx'
 
 import { Button } from '@mui/material'
 
@@ -67,7 +68,7 @@ export function Reviews({ game, removeReview, reviews, setReviews }) {
         {reviews.map((review) => {
           return (
             <div className='review' key={review.id}>
-              {user.isAdmin && (
+              {(user.fullname === review.fullName || user.isAdmin) && (
                 <button
                   className='btn remove'
                   onClick={() => onRemoveReview(review.id, reviews)}
@@ -85,49 +86,4 @@ export function Reviews({ game, removeReview, reviews, setReviews }) {
       </div>
     </section>
   )
-
-  function Stars({ rate }) {
-    switch (rate) {
-      case 1:
-        return (
-          <div>
-            <i className='fa-solid fa-star star'></i>
-          </div>
-        )
-      case 2:
-        return (
-          <div>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-          </div>
-        )
-      case 3:
-        return (
-          <div>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-          </div>
-        )
-      case 4:
-        return (
-          <div>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-          </div>
-        )
-      case 5:
-        return (
-          <div>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-            <i className='fa-solid fa-star star'></i>
-          </div>
-        )
-    }
-  }
 }

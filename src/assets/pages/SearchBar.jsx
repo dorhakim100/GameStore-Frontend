@@ -123,6 +123,11 @@ export function SearchBar({ icon, navigate, toggleNavBar }) {
       navigate('/game')
     }
   }
+  const [rotateChevron, setRotateChevron] = useState(false)
+
+  const handleRotate = () => setRotateChevron(!rotateChevron)
+
+  const rotate = rotateChevron ? 'rotate(180deg)' : 'rotate(0)'
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position='static'>
@@ -133,7 +138,12 @@ export function SearchBar({ icon, navigate, toggleNavBar }) {
             color='inherit'
             aria-label='open drawer'
             sx={{ mr: 2 }}
-            onClick={toggleNavBar}
+            onClick={() => {
+              toggleNavBar()
+              handleRotate()
+              console.log(rotate)
+            }}
+            style={{ transform: rotate, transition: 'all 0.2s linear' }}
           >
             <MenuIcon />
           </IconButton>

@@ -23,15 +23,15 @@ export function AddReview({ game, setReviews }) {
   })
 
   function onStarClick({ target }) {
-    // rating.current = +target.value
-    // console.log(rating.current)
-    // setReview({
-    //   fullName: fullName,
-    //   rating: rating,
-    //   date: date,
-    //   txt: txt,
-    // })
-    console.log('bla')
+    const rating = +target.value
+    console.log(rating)
+    setReview({
+      fullName: fullName,
+      rating: rating,
+      date: date,
+      txt: txt,
+    })
+    // console.log('bla')
   }
 
   // useEffect(() => {}, [])

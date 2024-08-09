@@ -4,6 +4,9 @@
     *{
 
     }
+    h2{
+        margin: 0px;
+    }
     .slider-container{
         margin: auto;
         // width: 80%;
@@ -35,11 +38,18 @@
         color: var(--text);
         background-color: var(--purple);
         padding: 1em;
-        border-radius: 15px;
+        // border-radius: 15px;
         transition: 0.2s;
+        margin: 0px;
         margin-top: 2em;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
         
-        
+        &:hover{
+            
+            // border-top-right-radius: 15px;
+            // border-top-left-radius: 15px;
+        }
     }
     .link{
         background-color: var(--blue);
@@ -68,9 +78,9 @@
             }
         }
     }
-
+    
+    margin-top: 5em;
     @media (min-width:600px) {
-        margin-top: 5em;
         
     }
 }

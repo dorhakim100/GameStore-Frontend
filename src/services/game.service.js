@@ -16,6 +16,7 @@ export const gameService = {
   getDefaultFilter,
   getMaxPage,
   getRandomGames,
+  getReviews,
 }
 window.cs = gameService
 
@@ -114,4 +115,8 @@ function getRandomGames() {
     }
     return randomGames
   })
+}
+
+async function getReviews(filterBy = getDefaultFilter()) {
+  return httpService.get('game/review', filterBy)
 }

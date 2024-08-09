@@ -59,6 +59,17 @@ export function NavBar({ navBarRef, toggleCart, toggleNavBar }) {
         >
           About
         </Button>
+        <Button
+          className='nav-button'
+          variant='contained'
+          onClick={() => {
+            // event.preventDefault()
+            navigate('/review')
+            toggleNavBar()
+          }}
+        >
+          Reviews
+        </Button>
         {user && (
           <Button
             className='nav-button'
