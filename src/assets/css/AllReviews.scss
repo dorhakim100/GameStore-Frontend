@@ -27,7 +27,7 @@
 .review-game-container{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(2,auto);
     align-items: center;
     // justify-items: center;
 
@@ -72,10 +72,11 @@
 
 
         width: 80%;
-        height: 50vh;
+        // height: 50vh;
+        // height: 250px;
 
         margin: 0 auto;
-
+        padding: 1em;
 
     }
 

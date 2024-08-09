@@ -205,11 +205,12 @@ export function GameEdit() {
         <div>
           <label htmlFor=''>Game Price:</label>
           <input
+            className='price'
             name='price'
             onChange={handleChange}
             type='number'
             value={editGame.price}
-            style={{ width: 50 }}
+            // style={{ width: 50 }}
           />
           <span>$</span>
         </div>
