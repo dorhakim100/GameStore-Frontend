@@ -118,5 +118,5 @@ function getRandomGames() {
 }
 
 async function getReviews(filterBy = getDefaultFilter()) {
-  return httpService.get('game/review', filterBy)
+  return httpService.get('review', filterBy)
 }
