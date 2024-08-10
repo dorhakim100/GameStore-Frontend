@@ -47,7 +47,9 @@ export function GameDetails() {
   useEffect(() => {
     setIsLoadingTrue()
     loadGame().then((game) => {
-      setIsLoadingFalse()
+      setTimeout(() => {
+        setIsLoadingFalse()
+      }, 400)
       if (!game.reviews) game.reviews = []
       setReviews(game.reviews)
     })
@@ -109,11 +111,11 @@ export function GameDetails() {
 
   return (
     <section className='section-container game-details'>
-      {/* {isLoading && (
+      {isLoading && (
         <div className='loader'>
           <img src={loader} alt='' />
         </div>
-      )} */}
+      )}
       <div className='game-page'>
         <div className='buttons-container'>
           <Link

@@ -86,6 +86,8 @@ export function GameFilter({ filterBy }) {
   const [onFilterBy, setOnFilterBy] = useState(filterBy)
   const debouncedSetFilter = useRef(utilService.debounce(setOnFilterBy, 500))
 
+  const [currentMaxPrice, setCurrentMaxPrice] = useState(filterBy.maxPrice)
+  console.log(currentMaxPrice)
   //   const isCheckRef = useRef()
   // const [onFilterBy, setOnFilterBy] = useState(filterBy)
   // const debouncedSetFilter = useRef(utilService.debounce(setOnFilterBy, 500))
@@ -123,18 +125,20 @@ export function GameFilter({ filterBy }) {
     switch (target.type) {
       case 'number':
         value = +value || ''
-        setOnFilterBy({ ...onFilterBy, maxPrice: value, pageIdx: 0 })
-        return
+        setCurrentMaxPrice(value)
+        // setOnFilterBy({ ...onFilterBy, maxPrice: value, pageIdx: 0 })
+        // return
         break
       case 'range':
         value = +value || ''
-        setOnFilterBy({ ...onFilterBy, maxPrice: value, pageIdx: 0 })
+        setCurrentMaxPrice(value)
+        // setOnFilterBy({ ...onFilterBy, maxPrice: value, pageIdx: 0 })
         // debouncedSetFilter.current((prevFilter) => ({
         //   ...prevFilter,
         //   [field]: value,
         //   pageIdx: 0,
         // }))
-        return
+        // return
         break
 
       case 'checkbox':
@@ -194,6 +198,7 @@ export function GameFilter({ filterBy }) {
       inStock: 'all',
       companies: [],
     })
+    setCurrentMaxPrice(onFilterBy.maxPrice)
   }
   const initialValue = ''
   return (
@@ -279,7 +284,7 @@ export function GameFilter({ filterBy }) {
             onChange={handleChange}
             id='price'
             name='maxPrice'
-            value={onFilterBy.maxPrice || 250}
+            value={currentMaxPrice}
           />
           <span>$</span>
           <input
@@ -288,6 +293,7 @@ export function GameFilter({ filterBy }) {
             id='price'
             min={1}
             max={250}
+            value={currentMaxPrice}
             name='maxPrice'
           />
         </div>

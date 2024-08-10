@@ -76,6 +76,7 @@ export function gameReducer(state = initialState, action = {}) {
       }
 
     case SET_IS_LOADING:
+      console.log(action.isLoading)
       return {
         ...state,
         isLoading: action.isLoading,

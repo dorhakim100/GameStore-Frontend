@@ -77,8 +77,8 @@ export function setFilterBy(filterBy) {
   store.dispatch({ type: SET_IS_LOADING, isLoading: true })
 }
 
-export function setIsLoadingFalse(isLoading) {
-  store.dispatch({ type: SET_IS_LOADING, isLoading })
+export function setIsLoadingFalse() {
+  store.dispatch({ type: SET_IS_LOADING, isLoading: false })
 }
 
 export function setIsLoadingTrue() {

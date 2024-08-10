@@ -57,16 +57,12 @@ export function GameIndex() {
 
   useEffect(() => {
     setCompanyVideo()
-    // setIsLoadingTrue()
+    setIsLoadingTrue()
     setTimeout(() => {
       loadGames().then((games) => {
         console.log(games)
         if (games.length === 0) {
-          setTimeout(() => {
-            setFilterBy(gameService.getDefaultFilter())
-            setIsLoadingFalse()
-            showErrorMsg(`Couldn't find games`)
-          }, 2000)
+          showErrorMsg(`Couldn't find games`)
         }
       })
     }, 500)

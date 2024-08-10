@@ -42,11 +42,43 @@
         background-color: rgb(31, 31, 31);
         // background-color: rgb(82, 82, 82);
     }
-    .review-container{
+    .title-container{
+
+        grid-column: 2/3;
+        grid-row: 1/2;
+
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        justify-content: space-between;
+
+        .rating{
+            color: var(--text);
+
+        }
+        .star{
+            font-size: 2em;
+            @media (max-width:800px) {
+                font-size: 1.5em;
+     
+                 
+             }
+        }
+    }
+    
+    .img-container{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        
+    }
+    .reviews-slider{
+        grid-column: 1/-1;
+        grid-row: 2/3;
 
     }
     
     h3{
+        
         font-size: 2em;
         width: 80%;
         margin: 0 auto;
